@@ -1,5 +1,5 @@
 package meta.data.dependency;
-
+#if windows
 #if DISCORD_RPC
 import discord_rpc.DiscordRpc;
 #end
@@ -77,3 +77,4 @@ class Discord
 	}
 	#end
 }
+#end
