@@ -673,6 +673,8 @@ class Controls extends FlxActionSet
 		}
 	}
 
+        #if !android
+				
 	/**
 	 * Sets all actions that pertain to the binder to trigger when the supplied keys are used.
 	 * If binder is a literal you can inline this
