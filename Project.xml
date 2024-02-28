@@ -46,6 +46,7 @@
 	<assets path="assets" />
 	<assets path="assets/songs" />
 	<assets path="assets/music" preload="true" />
+	<assets path="assets/android" if="android"/>
 
 	<!--<assets path="mods" />-->
 
@@ -53,7 +54,6 @@
 
 	<haxedev set='webgl' if="html5" />
 
-	<haxelib name="hxCodec" />
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
 	<haxelib name="flixel-ui" />
