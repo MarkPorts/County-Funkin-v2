@@ -30,13 +30,12 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-	#end
-	#if android
-	addVirtualPad(UP_DOWN, A);
-	#end
+	
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
-		
+		#if android
+	        addVirtualPad(UP_DOWN, A);
+	        #end
 		super.create();
 	
 		controls.setKeyboardScheme(None, false);
