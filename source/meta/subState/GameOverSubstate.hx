@@ -22,6 +22,10 @@ class GameOverSubstate extends MusicBeatSubState
 	var flashingTime:Float = 0;
 	public function new()
 	{
+	#end
+	#if android
+	addVirtualPad(NONE, A);
+	#end
 		super();
 
 		white = new FlxSprite();
