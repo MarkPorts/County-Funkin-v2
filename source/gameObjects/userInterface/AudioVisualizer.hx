@@ -5,7 +5,7 @@ import openfl.geom.Rectangle;
 import flixel.FlxCamera;
 import flixel.addons.display.shapes.FlxShapeLine;
 import flixel.util.FlxSpriteUtil;
-import sys.io.File;
+import openfl.utils.Assets;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
