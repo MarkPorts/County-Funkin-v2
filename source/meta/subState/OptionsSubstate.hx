@@ -40,7 +40,9 @@ class OptionsSubstate extends MusicBeatSubState
 		add(bg);
 		bg.alpha = 0.65;
 		
-
+                #if android
+		addVirtualPad(UP_DOWN, A_B_C);
+		#end
 		super.create();
 
 		keyOptions = generateOptions();
@@ -248,6 +250,14 @@ class OptionsSubstate extends MusicBeatSubState
 
 					// update stuffs
 					FlxG.sound.play(Paths.sound('scrollMenu'));
+					#if android
+		if (virtualPad.buttonC.justPressed) {
+			#if android
+			removeVirtualPad();
+			#end
+			openSubState(new android.AndroidControlsSubState());
+		}
+		#end
 				}
 			}
 
