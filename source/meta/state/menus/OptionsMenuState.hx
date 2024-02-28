@@ -39,6 +39,9 @@ class OptionsMenuState extends MusicBeatState
 
 	override public function create():Void
 	{
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
 		super.create();
 
 		// define the categories
