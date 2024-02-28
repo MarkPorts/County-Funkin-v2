@@ -26,9 +26,7 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.events.UncaughtErrorEvent;
-import sys.FileSystem;
-import sys.io.File;
-import sys.io.Process;
+import lime.system.System;
 
 typedef CrashContent = {
 	var content:String;
@@ -106,11 +104,7 @@ class Main extends Sprite
 		// addChild(new FPS(10, 3, 0xFFFFFF));
 
 		// begin the discord rich presence
-		#if DISCORD_RPC
-		Discord.initializeRPC();
-		Discord.changePresence('');
-		#end
-
+		
 		// test initialising the player settings
 		PlayerSettings.init();
 
