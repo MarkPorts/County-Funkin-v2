@@ -47,7 +47,7 @@ class PauseSubState extends MusicBeatSubState
 	{
 	#end
 	#if android
-	addVirtualPad(NONE, C_A_B);
+	addVirtualPad(NONE, A);
 	#end
 		super.update(elapsed);
 
