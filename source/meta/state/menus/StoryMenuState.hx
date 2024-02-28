@@ -44,6 +44,9 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
+		#if android
+		addVirtualPad(LEFT_RIGHT, A);
+		#end
 		super.create();
 		camMAIN = new FlxCamera();
 		camMAIN.bgColor.alpha = 0;
