@@ -1,24 +1,14 @@
 package meta;
 
 import flixel.FlxG;
-import flixel.FlxG;
-import flixel.input.FlxInput;
 import flixel.input.FlxInput;
 import flixel.input.actions.FlxAction;
-import flixel.input.actions.FlxAction;
-import flixel.input.actions.FlxActionInput;
 import flixel.input.actions.FlxActionInput;
 import flixel.input.actions.FlxActionInputDigital;
-import flixel.input.actions.FlxActionInputDigital;
-import flixel.input.actions.FlxActionManager;
 import flixel.input.actions.FlxActionManager;
 import flixel.input.actions.FlxActionSet;
-import flixel.input.actions.FlxActionSet;
-import flixel.input.gamepad.FlxGamepadButton;
 import flixel.input.gamepad.FlxGamepadButton;
 import flixel.input.gamepad.FlxGamepadInputID;
-import flixel.input.gamepad.FlxGamepadInputID;
-import flixel.input.keyboard.FlxKey;
 import flixel.input.keyboard.FlxKey;
 #if android
 import android.flixel.FlxButton;
@@ -323,6 +313,7 @@ class Controls extends FlxActionSet
 
 		setKeyboardScheme(scheme, false);
 	}
+
 	#if android
 	public var trackedinputsUI:Array<FlxActionInput> = [];
 	public var trackedinputsNOTES:Array<FlxActionInput> = [];
@@ -432,7 +423,8 @@ class Controls extends FlxActionSet
 				inline forEachBound(Control.BACK, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonB, state));
 			case A_B | A_B_C | A_B_E | A_B_X_Y | A_B_C_X_Y | A_B_C_X_Y_Z | A_B_C_D_V_X_Y_Z:
 				inline forEachBound(Control.ACCEPT, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonA, state));
-				inline forEachBound(Control.BACK, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonB, state));case NONE: // do nothing
+				inline forEachBound(Control.BACK, (action, state) -> addbuttonNOTES(action, VirtualPad.buttonB, state));
+			case NONE: // do nothing
 		}
 	}
 
@@ -452,8 +444,7 @@ class Controls extends FlxActionSet
 			}
 		}
 	}
-	#end
-
+	#end	
 	override function update()
 	{
 		super.update();
@@ -587,27 +578,6 @@ class Controls extends FlxActionSet
 		}
 	}
 
-		#else
-
-	public function bindKeys(control:Control, keys:Array<FlxKey>)
-	{
-		#if (haxe >= "4.0.0")
-		inline forEachBound(control, (action, state) -> addKeys(action, keys, state));
-		#else
-		forEachBound(control, function(action, state) addKeys(action, keys, state));
-		#end
-	}
-
-	public function unbindKeys(control:Control, keys:Array<FlxKey>)
-	{
-		#if (haxe >= "4.0.0")
-		inline forEachBound(control, (action, _) -> removeKeys(action, keys));
-		#else
-		forEachBound(control, function(action, _) removeKeys(action, keys));
-		#end
-	}	
-	#end
-
 	public function copyFrom(controls:Controls, ?device:Device)
 	{
 		#if (haxe >= "4.0.0")
@@ -673,8 +643,6 @@ class Controls extends FlxActionSet
 		}
 	}
 
-        #if !android
-				
 	/**
 	 * Sets all actions that pertain to the binder to trigger when the supplied keys are used.
 	 * If binder is a literal you can inline this
